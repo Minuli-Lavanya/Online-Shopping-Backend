@@ -1,0 +1,26 @@
+{
+  "name": "online-shopping-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minuli-Lavanya/Online-Shopping-Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Minuli-Lavanya/Online-Shopping-Backend/issues"
+  },
+  "homepage": "https://github.com/Minuli-Lavanya/Online-Shopping-Backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.7",
+    "nodemon": "^2.0.12"
+  }
+}
