@@ -30,13 +30,13 @@ router.route("/add").post((req, res)=>{
     })
 })
 
-// router.route("/").get((req,res)=>{
-//     Supplier_Detail.find().then((supplier)=>{
-//         res.json(supplier)
-//     }).catch((err)=>{
-//         console.log(err)
-//     })
-// })
+router.route("/").get((req,res)=>{
+    Supplier_Detail.find().then((supplier)=>{
+        res.json(supplier)
+    }).catch((err)=>{
+        console.log(err)
+    })
+})
 
 // router.route("/update/:id").put(async (req, res) => {
 //     let userId = req.params.id;
