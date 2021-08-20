@@ -29,6 +29,9 @@ const supplierRouter = require("./Routes/supplier")
 
 app.use("/supplier", supplierRouter);
 
+const itemRouter = require("./Routes/supplierItem");
+app.use("/item", itemRouter);
+
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)
 })

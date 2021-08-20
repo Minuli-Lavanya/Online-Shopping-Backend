@@ -25,7 +25,7 @@ const supplierDetailsSchema = new Schema({
     },
 
     phone_number : {
-        type : Number,
+        type : String,
         required: true
     },
 

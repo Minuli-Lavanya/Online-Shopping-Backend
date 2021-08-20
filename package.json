@@ -1,7 +1,7 @@
 {
   "name": "online-shopping-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "online shopping management",
   "main": "index.js",
   "scripts": {
     "start": "node server.js"
