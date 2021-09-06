@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+//product management product details model class
 
 const productSchema = new mongoose.Schema({
     product_id:{
