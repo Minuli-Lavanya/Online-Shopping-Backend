@@ -10,6 +10,8 @@ const categoryCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+
+    //create a new category
     createCategory: async (req, res) =>{
         try {
             // if user have role = 1 ---> admin
@@ -26,6 +28,7 @@ const categoryCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+    //delete categories
     deleteCategory: async(req, res) =>{
         try {
             const products = await Products.findOne({category: req.params.id})
@@ -39,6 +42,7 @@ const categoryCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+    //update categories
     updateCategory: async(req, res) =>{
         try {
             const {name} = req.body;

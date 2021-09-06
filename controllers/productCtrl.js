@@ -46,6 +46,8 @@ class APIfeatures {
 }
 
 const productCtrl = {
+    //get product details
+
     getProducts: async(req, res) =>{
         try {
             const features = new APIfeatures(Products.find(), req.query)
@@ -63,6 +65,8 @@ const productCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+
+    //create a new product
     createProduct: async(req, res) =>{
         try {
             const {product_id, title, price, description, content, images, category} = req.body;
@@ -83,6 +87,7 @@ const productCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+    //delete product details
     deleteProduct: async(req, res) =>{
         try {
             await Products.findByIdAndDelete(req.params.id)
@@ -91,6 +96,8 @@ const productCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+
+    //update product details
     updateProduct: async(req, res) =>{
         try {
             const {title, price, description, content, images, category} = req.body;
