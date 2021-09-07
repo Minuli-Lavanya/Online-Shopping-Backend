@@ -1,6 +1,6 @@
 const Payments = require('../models/paymentModel')
 const Users = require('../models/userModel')
-const Products = require('../models/productModel')
+//const Products = require('../models/productModel')
 
 
 const paymentCtrl = {
@@ -39,10 +39,10 @@ const paymentCtrl = {
     }
 }
 
-const sold = async (id, quantity, oldSold) =>{
-    await Products.findOneAndUpdate({_id: id}, {
-        sold: quantity + oldSold
-    })
+// const sold = async (id, quantity, oldSold) =>{
+//     await Products.findOneAndUpdate({_id: id}, {
+//         sold: quantity + oldSold
+//     })
 }
 
 module.exports = paymentCtrl
