@@ -75,17 +75,17 @@ router.route("/update/:id").put(async (req, res) => {
 
 
 
-//get one items's data
-router.route("/get/:id").get(async (req, res) => {
-    let userId = req.params.id;
+// //get one items's data
+// router.route("/get/:id").get(async (req, res) => {
+//     let userId = req.params.id;
 
-    const item = await Supplier_Item_Detail.findById(userId).then((Supplier_Item_Detail) => {
-        res.status(200).send({status: "User fetched", Supplier_Item_Detail});
-    }).catch((err) => {
-        console.log(err.message);
-        res.status(500).send({status: "Error with get user !", error:err.message});
-    })
-})
+//     const item = await Supplier_Item_Detail.findById(userId).then((Supplier_Item_Detail) => {
+//         res.status(200).send({status: "User fetched", Supplier_Item_Detail});
+//     }).catch((err) => {
+//         console.log(err.message);
+//         res.status(500).send({status: "Error with get user !", error:err.message});
+//     })
+// })
 
 
 module.exports = router;
