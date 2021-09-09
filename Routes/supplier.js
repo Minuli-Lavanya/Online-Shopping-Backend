@@ -70,18 +70,18 @@ router.route("/update/:id").put(async (req, res) => {
         
     })
 
-    //get one member's data
-    router.route("/get/:id").get(async (req, res) => {
-    let userId = req.params.id;
+    // //get one member's data
+    // router.route("/get/:id").get(async (req, res) => {
+    // let userId = req.params.id;
 
-    const supplierdata = await Supplier_Detail.findById(userId).then((Supplier_Detail) => {
-        res.status(200).send({status: "User fetched", Supplier_Detail});
-    }).catch((err) => {
-        console.log(err.message);
-        res.status(500).send({status: "Error with get user !", error:err.message});
-    })
+    // const supplierdata = await Supplier_Detail.findById(userId).then((Supplier_Detail) => {
+    //     res.status(200).send({status: "User fetched", Supplier_Detail});
+    // }).catch((err) => {
+    //     console.log(err.message);
+    //     res.status(500).send({status: "Error with get user !", error:err.message});
+    // })
 
-    })
+    // })
    
 })
 
