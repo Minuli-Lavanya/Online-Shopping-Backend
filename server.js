@@ -16,6 +16,12 @@ app.use(fileUpload({
 }))
 
 // Routes
+const supplierRouter = require("./Routes/supplier")
+
+app.use("/supplier", supplierRouter);
+
+const itemRouter = require("./Routes/supplierItem");
+app.use("/item", itemRouter);
 app.use('/user', require('./Routes/userRouter'))
 app.use('/api', require('./Routes/categoryRouter'))
 app.use('/api', require('./Routes/upload'))
