@@ -16,6 +16,13 @@ app.use(fileUpload({
 }))
 
 // Routes
+
+app.use('/user', require('./routes/userRouter'))
+//app.use('/api', require('./routes/categoryRouter'))
+//app.use('/api', require('./routes/upload'))
+//app.use('/api', require('./routes/productRouter'))
+app.use('/api', require('./routes/paymentRouter'))
+
 const supplierRouter = require("./Routes/supplier")
 
 app.use("/supplier", supplierRouter);
@@ -27,6 +34,7 @@ app.use('/api', require('./Routes/categoryRouter'))
 app.use('/api', require('./Routes/upload'))
 app.use('/api', require('./Routes/productRouter'))
 //app.use('/api', require('./Routes/paymentRouter'))
+
 
 
 
@@ -54,4 +62,4 @@ if(process.env.NODE_ENV === 'production'){
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () =>{
     console.log('Server is running on port', PORT)
-})
+
