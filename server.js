@@ -16,19 +16,6 @@ app.use(fileUpload({
 }))
 
 // Routes
-
-app.use('/user', require('./routes/userRouter'))
-//app.use('/api', require('./routes/categoryRouter'))
-//app.use('/api', require('./routes/upload'))
-//app.use('/api', require('./routes/productRouter'))
-app.use('/api', require('./routes/paymentRouter'))
-
-const supplierRouter = require("./Routes/supplier")
-
-app.use("/supplier", supplierRouter);
-
-const itemRouter = require("./Routes/supplierItem");
-app.use("/item", itemRouter);
 app.use('/user', require('./Routes/userRouter'))
 app.use('/api', require('./Routes/categoryRouter'))
 app.use('/api', require('./Routes/upload'))
@@ -44,7 +31,6 @@ app.use("/cartItem", require("./routes/cartRouter"));
 
 app.use("/delivery", require("./routes/deliverytRouter"));
 //app.use('/api', require('./Routes/paymentRouter'))
-
 
 
 
@@ -67,6 +53,12 @@ if(process.env.NODE_ENV === 'production'){
     })
 }
 
+const supplierRouter = require("./Routes/suppliers");
+  app.use("/supplier", supplierRouter);
+
+  const itemRouter = require("./Routes/supplierItem");
+  app.use("/item", itemRouter);
+
 
 
 const PORT = process.env.PORT || 5000
@@ -75,3 +67,4 @@ app.listen(PORT, () =>{
 })
 
 
+app.use("/productSummary", require("./Routes/productSummaryRouter"));
