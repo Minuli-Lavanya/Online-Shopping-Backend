@@ -20,6 +20,16 @@ app.use('/user', require('./Routes/userRouter'))
 app.use('/api', require('./Routes/categoryRouter'))
 app.use('/api', require('./Routes/upload'))
 app.use('/api', require('./Routes/productRouter'))
+
+app.use("/cartItem", require("./routes/cartRouter"));
+
+
+app.use("/delivery", require("./routes/deliverytRouter"));
+
+app.use("/cartItem", require("./routes/cartRouter"));
+
+
+app.use("/delivery", require("./routes/deliverytRouter"));
 //app.use('/api', require('./Routes/paymentRouter'))
 
 
@@ -55,5 +65,6 @@ const PORT = process.env.PORT || 5000
 app.listen(PORT, () =>{
     console.log('Server is running on port', PORT)
 })
+
 
 app.use("/productSummary", require("./Routes/productSummaryRouter"));
