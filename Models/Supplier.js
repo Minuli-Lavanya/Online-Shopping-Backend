@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const supplierDetailsSchema = new Schema({
-    
+const supplierSchema = new Schema({
+
     supplier_id : {
         type : String,
         required: true
@@ -32,10 +32,12 @@ const supplierDetailsSchema = new Schema({
     gender : {
         type : String,
         required: true
-    }
+    },
+
+    
 
 })
 
-const Supplier_Detail = mongoose.model("Supplier_Detail", supplierDetailsSchema);
+const Supplier = mongoose.model("Supplier", supplierSchema);
 
-module.exports = Supplier_Detail;
+module.exports = Supplier;
