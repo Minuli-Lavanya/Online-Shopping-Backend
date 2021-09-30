@@ -60,27 +60,52 @@ router.route("/update/:id").put(async (req, res) => {
         res.status(500).send({status: "Error with updating item data", error: err.message})
     })
 
-    router.route("/delete/:id").delete(async (req, res) => {
-        let userId = req.params.id;
+    // router.route("/delete/:id").delete(async (req, res) => {
+    //     let userId = req.params.id;
 
-        await Supplier_Item_Detail.findByIdAndDelete(userId).then(() => {
-            res.status(200).send({status: "User deleted"});
+    //     await Supplier_Item_Detail.findByIdAndDelete(userId).then(() => {
+    //         res.status(200).send({status: "User deleted"});
 
-        }).catch((err) => {
-            console.log(err.message);
-            res.status(500).send({status: "Error with delete item", error: err.message})
-        })
+    //     }).catch((err) => {
+    //         console.log(err.message);
+    //         res.status(500).send({status: "Error with delete item", error: err.message})
+    //     })
+    // })
+
+
+    // //get one items's data
+    // router.route("/get/:id").get(async (req, res) => {
+    //     let userId = req.params.id;
+
+    //     const item = await Supplier_Item_Detail.findById(userId).then((Supplier_Item_Detail) => {
+    //     res.status(200).send({status: "User fetched", Supplier_Item_Detail});
+    //     }).catch((err) => {
+    //         console.log(err.message);
+    //         res.status(500).send({status: "Error with get user !", error:err.message});
+    //     })
+    // })
+})
+
+router.route("/delete/:id").delete(async (req , res) => {
+    let userId = req.params.id;
+
+    await Supplier_Item_Detail.findByIdAndDelete(userId).then(() => {
+        res.status(200).send({status: "User deleted"});
+    
+    }).catch((err) => {
+        console.log(err.message);
+        res.status(500).send({status: "Error with delete item", error: err.message})
     })
 })
 
 
 
-//get one items's data
+// //get one items's data
 router.route("/get/:id").get(async (req, res) => {
     let userId = req.params.id;
 
-    const item = await Supplier_Item_Detail.findById(userId).then((Supplier_Item_Detail) => {
-        res.status(200).send({status: "User fetched", Supplier_Item_Detail});
+    const item = await Supplier_Item_Detail.findById(userId).then((item) => {
+        res.status(200).send({status: "User fetched",item});
     }).catch((err) => {
         console.log(err.message);
         res.status(500).send({status: "Error with get user !", error:err.message});
